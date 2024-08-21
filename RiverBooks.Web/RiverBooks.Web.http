@@ -40,7 +40,7 @@ Accept: application/json
 Content-Type: application/json
 
 {
-  "newPrice": -9.99
+  "newPrice": 19.99
 }
 
 ###
@@ -67,7 +67,7 @@ Content-Type: application/json
 
 ###
 
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJzdGV2ZUB0ZXN0LmNvbSIsImlhdCI6MTcwNjkxMTUxOSwiZXhwIjoxNzA2OTE1MTE5LCJuYmYiOjE3MDY5MTE1MTl9.3USOZI5sIjILE2le4U_4tuphlq0L4sWOV570gVnWPhw
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJzdGV2ZUB0ZXN0LmNvbSIsImlhdCI6MTcwODI5MDk3OSwiZXhwIjoxNzA4Mjk0NTc5LCJuYmYiOjE3MDgyOTA5Nzl9.r2fPX8UWKLpbeef5NnXZSZWfhvxmrPFAsdxUCTd4siY
 
 # Add item to cart
 POST {{RiverBooks.Web_HostAddress}}/cart
@@ -77,7 +77,7 @@ Content-Type: application/json
 
 {
   "bookId":"a89f6cd7-4693-457b-9009-02205dbbfe45",
-  "quantity":1
+  "quantity":2
 }
 
 ###
@@ -86,5 +86,61 @@ Content-Type: application/json
 GET {{RiverBooks.Web_HostAddress}}/cart
 Accept: application/json
 Authorization: Bearer {{token}}
+
+###
+
+# List All Orders
+GET {{RiverBooks.Web_HostAddress}}/orders
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Checkout Cart
+POST {{RiverBooks.Web_HostAddress}}/cart/checkout
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "shippingAddressId":"1184ecab-f236-43e9-a48c-a5b9bc59ad11",
+  "billingAddressId":"1184ecab-f236-43e9-a48c-a5b9bc59ad11"
+}
+
+###
+
+# List Addresses
+
+GET {{RiverBooks.Web_HostAddress}}/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# Add Address to User
+POST {{RiverBooks.Web_HostAddress}}/users/addresses
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "street1": "2 Main St.",
+  "street2": "Number 722",
+  "city":"Anytown",
+  "state":"OH",
+  "postalCode":"12345-6789",
+  "country":"USA"
+}
+
+###
+
+# FLUSH CACHE
+
+POST {{RiverBooks.Web_HostAddress}}/flushcache
+Accept: application/json
+Content-Type: application/json
+
+{
+}
 
 ###
