@@ -45,29 +45,33 @@ Content-Type: application/json
 
 ###
 
+# CREATE USER
+
 POST {{RiverBooks.Web_HostAddress}}/users
 Accept: application/json
 Content-Type: application/json
 
 {
-  "email":"steve@test.com",
+  "email":"steve3@test.com",
   "password":"Pass@word1"
 }
 
 ###
+
+# LOGIN
 
 POST {{RiverBooks.Web_HostAddress}}/users/login
 Accept: application/json
 Content-Type: application/json
 
 {
-  "email":"steve@test.com",
+  "email":"steve2@test.com",
   "password":"Pass@word1"
 }
 
 ###
 
-@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJzdGV2ZUB0ZXN0LmNvbSIsImlhdCI6MTcwODI5MDk3OSwiZXhwIjoxNzA4Mjk0NTc5LCJuYmYiOjE3MDgyOTA5Nzl9.r2fPX8UWKLpbeef5NnXZSZWfhvxmrPFAsdxUCTd4siY
+@token=eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJFbWFpbEFkZHJlc3MiOiJzdGV2ZTJAdGVzdC5jb20iLCJpYXQiOjE3MDg0ODQ3NjEsImV4cCI6MTcwODQ4ODM2MSwibmJmIjoxNzA4NDg0NzYxfQ.bR4zGFyl_rKj3_D1YEKZFIBcKDPX7LsHHPXQPdK4ceU
 
 # Add item to cart
 POST {{RiverBooks.Web_HostAddress}}/cart
@@ -77,7 +81,7 @@ Content-Type: application/json
 
 {
   "bookId":"a89f6cd7-4693-457b-9009-02205dbbfe45",
-  "quantity":2
+  "quantity":10
 }
 
 ###
@@ -142,5 +146,27 @@ Content-Type: application/json
 
 {
 }
+
+###
+
+# LIST EMAILS
+
+GET {{RiverBooks.Web_HostAddress}}/emails
+Accept: application/json
+Authorization: Bearer {{token}}
+
+###
+
+# TOP SALES 1 - REACH IN REPORTING
+
+GET {{RiverBooks.Web_HostAddress}}/topsales?month=2&year=2024
+Accept: application/json
+
+###
+
+# TOP SALES 2 - EVENT INGESTION CUSTOM DB
+
+GET {{RiverBooks.Web_HostAddress}}/topsales2?month=2&year=2024
+Accept: application/json
 
 ###
