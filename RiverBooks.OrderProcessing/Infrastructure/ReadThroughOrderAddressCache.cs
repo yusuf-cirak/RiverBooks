@@ -1,8 +1,10 @@
 ﻿using Ardalis.Result;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using RiverBooks.OrderProcessing.Domain;
+using RiverBooks.OrderProcessing.Interfaces;
 
-namespace RiverBooks.OrderProcessing;
+namespace RiverBooks.OrderProcessing.Infrastructure;
 
 internal class ReadThroughOrderAddressCache : IOrderAddressCache
 {

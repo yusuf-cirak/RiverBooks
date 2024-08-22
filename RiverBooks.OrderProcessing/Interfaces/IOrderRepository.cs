@@ -1,4 +1,6 @@
-﻿namespace RiverBooks.OrderProcessing;
+﻿using RiverBooks.OrderProcessing.Domain;
+
+namespace RiverBooks.OrderProcessing.Interfaces;
 
 internal interface IOrderRepository
 {

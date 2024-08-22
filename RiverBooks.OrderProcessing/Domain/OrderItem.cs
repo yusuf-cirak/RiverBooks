@@ -1,6 +1,6 @@
 ﻿using Ardalis.GuardClauses;
 
-namespace RiverBooks.OrderProcessing;
+namespace RiverBooks.OrderProcessing.Domain;
 
 internal class OrderItem
 {

@@ -1,9 +1,10 @@
 ﻿using System.Text.Json;
 using Ardalis.Result;
 using Microsoft.Extensions.Logging;
+using RiverBooks.OrderProcessing.Interfaces;
 using StackExchange.Redis;
 
-namespace RiverBooks.OrderProcessing;
+namespace RiverBooks.OrderProcessing.Infrastructure;
 
 internal class RedisOrderAddressCache : IOrderAddressCache
 {

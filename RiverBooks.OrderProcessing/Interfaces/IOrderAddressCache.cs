@@ -1,6 +1,7 @@
 ﻿using Ardalis.Result;
+using RiverBooks.OrderProcessing.Infrastructure;
 
-namespace RiverBooks.OrderProcessing;
+namespace RiverBooks.OrderProcessing.Interfaces;
 
 internal interface IOrderAddressCache
 {

@@ -1,7 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using RiverBooks.OrderProcessing.Domain;
 
-namespace RiverBooks.OrderProcessing;
+namespace RiverBooks.OrderProcessing.Infrastructure.Data;
 
 public class OrderItemConfiguration : IEntityTypeConfiguration<OrderItem>
 {
