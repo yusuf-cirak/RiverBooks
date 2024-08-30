@@ -1,0 +1,6 @@
+@RiverBooks.Users.WebAPI_HostAddress = http://localhost:5099
+
+GET {{RiverBooks.Users.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
